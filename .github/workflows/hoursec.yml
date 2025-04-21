@@ -14,9 +14,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Install Horusec
+      - name: Install Horusec CLI
         run: |
-          curl -fsSL https://horusec.io/bin/install.sh | bash
+          curl -fsSL https://github.com/ZupIT/horusec/releases/latest/download/horusec_linux_amd64 -o horusec
+          chmod +x horusec
+          sudo mv horusec /usr/local/bin/
 
       - name: Run Horusec scan
         run: |
