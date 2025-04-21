@@ -22,4 +22,9 @@ jobs:
 
       - name: Run Horusec scan
         run: |
-          horusec start -p ./ --config-file-path="./horusec-config.json" -e="true" -o="json"
+          horusec start \
+            -p ./ \
+            --config-file-path="./horusec-config.json" \
+            -e="true" \
+            -o="json" \
+            --json-output-file="horusec-results.json"
