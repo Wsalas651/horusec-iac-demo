@@ -1,0 +1,11 @@
+{
+    "horusecCliPath": "./",
+    "timeoutInSeconds": 600,
+    "informationSeverity": true,
+    "enableGitHistoryAnalysis": false,
+    "projectPath": "./",
+    "falsePositiveHashes": [],
+    "riskAcceptHashes": [],
+    "toolsConfig": {}
+  }
+  

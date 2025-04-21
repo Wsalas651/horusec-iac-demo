@@ -1,0 +1,7 @@
+- hosts: all
+  become: yes
+  tasks:
+    - name: Create insecure user
+      user:
+        name: root
+        password: "insecure123"

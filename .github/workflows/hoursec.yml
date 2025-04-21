@@ -1,0 +1,23 @@
+name: Horusec IaC Scan
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  horusec-scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Horusec
+        run: |
+          curl -fsSL https://horusec.io/bin/install.sh | bash
+
+      - name: Run Horusec scan
+        run: |
+          horusec start -p ./ --config-file-path="./horusec-config.json" -e="true" -o="json"
